@@ -21,7 +21,8 @@ export default async function Page({ params }: { params: { id: string } }) {
           },
         ]}
       />
-      <Form invoice={invoice} customers={customers} />
+      {!invoice && <p>Invoice not found</p>}
+      {invoice && <Form invoice={invoice} customers={customers} />}
     </main>
   );
 }
